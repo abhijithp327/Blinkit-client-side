@@ -29,10 +29,10 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 
 android {
     // Use the ext values for SDK and build tool versions
-    ndkVersion rootProject.ext.ndkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdkVersion rootProject.ext.compileSdkVersion
-
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    ndkVersion rootProject.ext.ndkVersion // Ensure this is set in the root build.gradle file
+    
     namespace "com.blinkit"
     defaultConfig {
         applicationId "com.blinkit"
@@ -40,6 +40,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true // Add if multidex is required
     }
     signingConfigs {
         debug {
@@ -63,12 +64,18 @@ android {
 }
 
 dependencies {
+    implementation 'com.tencent:mmkv-static:1.2.13' // MMKV dependency
+    
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-
+    
+    // Check if Hermes is enabled, and apply accordingly
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {
         implementation jscFlavor
     }
+
+    // Additional dependencies
+    implementation 'androidx.multidex:multidex:2.0.1' // Add Multidex if needed
 }
