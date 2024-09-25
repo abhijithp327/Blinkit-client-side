@@ -5,9 +5,9 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 
 interface InputProps {
-    left: React.ReactNode;
-    onClear: () => void;
-    right: React.ReactNode;
+    left?: React.ReactNode;
+    onClear?: () => void;
+    right?: boolean;
 };
 
 
@@ -18,7 +18,7 @@ const CustomInput: React.FC<InputProps & React.ComponentProps<typeof TextInput>>
     ...props
 }) => {
     return (
-        <View>
+        <View style={styles.flexRow}>
             {left}
             <TextInput
                 {...props}
