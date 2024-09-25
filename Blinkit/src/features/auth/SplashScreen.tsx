@@ -21,11 +21,11 @@ const SplashScreen: React.FC = () => {
 
     const tokenCheck = async () => {
 
-        const accessToken = tokenStorage.getString('accessToken');
-        const refreshToken = tokenStorage.getString('refreshToken');
+        const accessToken = tokenStorage.getString('accessToken') as string
+        const refreshToken = tokenStorage.getString('refreshToken') as string
 
         if (accessToken) {
-            
+
         }
 
         resetAndNavigate("CustomerLogin");
