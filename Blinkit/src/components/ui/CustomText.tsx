@@ -83,7 +83,7 @@ const CustomText: React.FC<Props> = ({
 const styles = StyleSheet.create({
 
     text: {
-        textAlign: 'left'
+        textAlign: 'center',
     },
 
 });
