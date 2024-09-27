@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@homielab/react-native-auto-scroll": "^0.0.10",
+    "@r0b0t3d/react-native-collapsible": "^0.1.0",
     "@react-native-community/cli": "^14.1.1",
     "@react-native-community/geolocation": "^3.4.0",
     "@react-navigation/native": "^6.1.18",
@@ -23,6 +24,7 @@
     "react": "18.3.1",
     "react-native": "^0.75.3",
     "react-native-collapsible": "^1.6.2",
+    "react-native-collapsible-header-views": "^1.1.2",
     "react-native-gesture-handler": "^2.19.0",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-mmkv-storage": "^0.10.3",

@@ -64,7 +64,7 @@ const SplashScreen: React.FC = () => {
             if (user?.role === 'Customer') {
                 resetAndNavigate("ProductDashboard");
             } else {
-                resetAndNavigate("DeliveryDashboard");
+                resetAndNavigate("ProductDashboard");
             }
 
 
